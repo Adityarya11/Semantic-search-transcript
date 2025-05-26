@@ -3,6 +3,7 @@ import tempfile
 import os
 import sys
 
+# Add project root to sys.path for src imports
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 from src.utils import TranscriptLoader
@@ -17,10 +18,11 @@ Upload a transcript file, select a search method, and ask a question to find the
 The transcript should be in the format `[MM:SS - MM:SS] text`.
 """)
 
+# File uploader
 uploaded_file = st.file_uploader("Upload Transcript File", type=["txt"])
 
 if uploaded_file:
-
+    # Save transcript to temporary file
     with tempfile.NamedTemporaryFile(delete=False, suffix=".txt") as temp_file:
         temp_file.write(uploaded_file.getbuffer())
         temp_path = temp_file.name
@@ -34,7 +36,7 @@ if uploaded_file:
         st.error("Failed to load transcript. Please ensure the file is in the correct format.")
         st.stop()
 
-    
+    # Search method selection
     method = st.selectbox("Search Method", ["TF-IDF", "Hugging Face LLM (llm2)"])
 
     # Initialize searcher
@@ -48,7 +50,7 @@ if uploaded_file:
         st.error("Failed to initialize search method.")
         st.stop()
 
-  
+    # Query input
     question = st.text_input("Enter your question:", placeholder="e.g., What is artificial intelligence?")
 
     if st.button("Search"):

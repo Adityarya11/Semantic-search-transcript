@@ -10,7 +10,7 @@ from src.utils import TranscriptLoader
 from src.search_tfidf import TFIDFSearcher
 from src.search_hf import HuggingFaceSearcher
 
-st.set_page_config(page_title="Semantic Search for Transcript Q&A", layout="wide")
+st.set_page_config(page_title="Semantic Search for Transcript Q&A",page_icon="🔎",  layout="wide")
 
 st.title("Semantic Search for Transcript Q&A")
 st.markdown("""

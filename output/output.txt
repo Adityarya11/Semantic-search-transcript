@@ -1,0 +1,44 @@
+Question: What is the definition of artificial intelligence as explained in the transcript?
+Method: llm2
+Output: [01:40 - 01:43], Just for your understanding, what is AI?
+
+Question: What is the definition of artificial intelligence as explained in the transcript?
+Method: tfidf
+Output: [14:18 - 14:20], of artificial intelligence.
+
+Question: When was the term artificial intelligence first introduced?
+Method: llm2
+Output: [00:44 - 00:48], The term artificial intelligence was first coined in the year 1956.
+
+Question: When was the term artificial intelligence first introduced?
+Method: tfidf
+Output: [14:18 - 14:20], of artificial intelligence.
+
+Question: How does machine learning contribute to artificial intelligence?
+Method: llm2
+Output: [00:19 - 00:24], Well artificial intelligence is a broader umbrella under which machine learning and deep learning
+
+Question: How does machine learning contribute to artificial intelligence?
+Method: tfidf
+Output: [14:18 - 14:20], of artificial intelligence.
+
+Question: What are some practical applications of deep learning mentioned in the transcript?
+Method: llm2
+Output: [05:30 - 05:32], Now what is deep learning?
+
+Question: What are some practical applications of deep learning mentioned in the transcript?
+Method: tfidf
+Output: [05:30 - 05:32], Now what is deep learning?
+
+Question: Can you explain the difference between artificial intelligence and traditional programming?
+Method: llm2
+Output: [01:40 - 01:43], Just for your understanding, what is AI?
+
+Question: Can you explain the difference between artificial intelligence and traditional programming?
+Method: tfidf
+Output: [14:18 - 14:20], of artificial intelligence.
+
+Question: 9
+Method: tfidf
+Output: No relevant answer found.
+

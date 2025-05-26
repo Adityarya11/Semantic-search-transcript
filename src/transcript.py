@@ -13,7 +13,7 @@ def main():
     transcript_file = sys.argv[1]
     method = sys.argv[2].lower()
     
-    # Validate method
+    # Validation of the method
     if method not in ['tfidf', 'llm2']:
         print("Error: Method must be one of: tfidf, llm2")
         sys.exit(1)
@@ -57,7 +57,7 @@ def main():
                     query = input("> ").strip()
                     
                     if query == '8':
-                        print("Goodbye!")
+                        print("Semantic search ended.")
                         break
                     
                     if not query:

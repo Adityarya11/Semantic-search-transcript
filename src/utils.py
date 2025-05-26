@@ -13,8 +13,6 @@ class TranscriptLoader:
             with open(self.file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
             
-            # Parse timestamped transcript using regex
-            # Pattern matches [HH:MM - HH:MM] followed by text
             pattern = r'\[(\d{2}:\d{2}\s*-\s*\d{2}:\d{2})\]\s*(.+?)(?=\[|\Z)'
             matches = re.findall(pattern, content, re.DOTALL)
             
@@ -39,8 +37,7 @@ class TranscriptLoader:
             sys.exit(1)
     
     def clean_text(self, text):
-        """Clean and preprocess text chunk"""
-        # Remove extra whitespace and newlines
+        
         text = re.sub(r'\s+', ' ', text.strip())
         
         # Remove any remaining unwanted characters

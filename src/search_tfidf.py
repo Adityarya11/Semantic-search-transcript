@@ -11,10 +11,8 @@ class TFIDFSearcher:
         self._build_index()
     
     def _build_index(self):
-        """Build TF-IDF index from transcript chunks"""
         print("Building TF-IDF index...")
         
-        # Initialize TF-IDF vectorizer with optimized parameters
         self.vectorizer = TfidfVectorizer(
             stop_words='english',
             lowercase=True,
@@ -34,33 +32,20 @@ class TFIDFSearcher:
             raise
     
     def search(self, query, top_k=1, similarity_threshold=0.1):
-        """
-        Search for the most relevant chunk using TF-IDF and cosine similarity
         
-        Args:
-            query (str): User question
-            top_k (int): Number of top results to consider
-            similarity_threshold (float): Minimum similarity score
-        
-        Returns:
-            tuple: (timestamp, text) of most relevant chunk or None
-        """
         if not query.strip():
             return None
         
         try:
-            # Ensure the vectorizer is initialized
             if self.vectorizer is None or self.tfidf_matrix is None:
                 raise ValueError("Vectorizer is not initialized. Call _build_index() first.")
             
-            # Transform query using the fitted vectorizer
             if self.vectorizer is None or self.tfidf_matrix is None:
                 self._build_index()
             
             query_vector = self.vectorizer.transform([query.lower()])
             
-            # Check if query vector is empty
-            # type: ignore[attr-defined]  # nnz is valid for scipy sparse matrices
+            
             if query_vector.nnz == 0:  # type: ignore[attr-defined]
                 print("Warning: Query contains no recognized terms")
                 return None
@@ -102,7 +87,6 @@ class TFIDFSearcher:
             return []
         
         try:
-            # Ensure the vectorizer is initialized
             if self.vectorizer is None or self.tfidf_matrix is None:
                 self._build_index()
             
@@ -110,8 +94,7 @@ class TFIDFSearcher:
             if self.vectorizer is None:
                 raise ValueError("Vectorizer is not initialized. Call _build_index() first.")
             query_vector = self.vectorizer.transform([query.lower()])
-            # Check if query vector is empty
-            # type: ignore[attr-defined]  # nnz is valid for scipy sparse matrices
+            
             if query_vector.nnz == 0:  # type: ignore[attr-defined]
                 print("Warning: Query contains no recognized terms")
                 return []
@@ -171,8 +154,7 @@ class TFIDFSearcher:
             
             # Transform query
             query_vector = self.vectorizer.transform([query.lower()])
-            # Check if query vector is empty
-            # type: ignore[attr-defined]  # nnz is valid for scipy sparse matrices
+            
             if query_vector.nnz == 0:  # type: ignore[attr-defined]
                 return {
                     'error': 'Query contains no recognized terms',

@@ -82,4 +82,8 @@ else:
     st.info("Please upload a transcript file to begin.")
 
 st.markdown("---")
-st.markdown("Built with Streamlit for the AI Internship Assignment, May 2025.")
+st.markdown("""
+    <div class="footer">
+        © 2025 Stock Multi Agent System | Powered by Aditya Arya
+    </div>
+""", unsafe_allow_html=True)

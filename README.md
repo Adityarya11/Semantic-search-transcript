@@ -23,7 +23,7 @@ A Python-based semantic search system to find relevant transcript chunks based o
   ```
 - **Transcript Format**: Supports `[MM:SS - MM:SS] text` format.
 
-- **OPENAI API**: This approach wasn't applied as I don't have any api key for that, although i do have an api key of gemini but I dont't know the code wasn't running. So I removed the search_llm1/py method but below is the implementation
+- **GEMINI API**: This approach wasn't applied as I don't have any api key for that, although i do have an api key of gemini but I dont't know the code wasn't running. So I removed the search_llm1/py method but below is the implementation
 
 ```python
 import numpy as np

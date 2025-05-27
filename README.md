@@ -224,6 +224,9 @@ python src/transcript.py data/transcript.txt tfidf
 Run the Streamlit app for a browser-based interface.
 Link : *https://semanticsearchtranscript.streamlit.app*
 
+Download the transcript.txt from data folder of the repo and then drag and drop int the above link. 
+Now ask the questions based on the methods mentioned above. 
+
 **Command**:
 
 ```bash

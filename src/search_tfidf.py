@@ -38,9 +38,6 @@ class TFIDFSearcher:
         
         try:
             if self.vectorizer is None or self.tfidf_matrix is None:
-                raise ValueError("Vectorizer is not initialized. Call _build_index() first.")
-            
-            if self.vectorizer is None or self.tfidf_matrix is None:
                 self._build_index()
             
             query_vector = self.vectorizer.transform([query.lower()])
@@ -97,7 +94,6 @@ class TFIDFSearcher:
             
             if query_vector.nnz == 0:  # type: ignore[attr-defined]
                 print("Warning: Query contains no recognized terms")
-                return []
                 return []
             
             # Calculate similarities
